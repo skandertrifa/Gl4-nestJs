@@ -1,12 +1,19 @@
 import { TodoStatusEnum } from "../enums/todo-status.enum";
+import { v4 as uuidv4 } from 'uuid';
 
 export class Todo {
+    public id = '';
+    public name = '';
+    public description = '';
+    public createdAt= new Date();
+    public status: TodoStatusEnum
+
     constructor(
-        public id: string = '',
-        public name: string = '',
-        public description: string = '',
-        public createdAt =  new Date(),
-        public status: TodoStatusEnum = TodoStatusEnum.waiting
+        id = uuidv4(),
+        name = '',
+        description = '',
+        createdAt =  new Date(),
+        status = TodoStatusEnum.waiting
     ){
         this.id =id;
         this.name=name;
